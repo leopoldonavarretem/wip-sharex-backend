@@ -2,19 +2,19 @@ const { Schema, model } = require("mongoose");
 
 const reviewSchema = new Schema(
   {
-    user_Id: {
+    userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
       unique: false,
     },
 
-    media_Id: {
+    mediaId: {
       type: Schema.Types.ObjectId,
       ref: "Media",
       unique: false,
     },
 
-    review_text: {
+    reviewText: {
       type: String,
     },
 
