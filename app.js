@@ -1,13 +1,16 @@
-//This allows access to environment variables/settings
+//Allows access to our environmental variables/settings
 require("dotenv/config")
 
-//TODO: Add the mongoAtlas.configuration
-
+//Imports Express and creates our server
 const express = require("express");
-
 const app = express();
 
-console.log("Everything looks good!")
+//Allows us to run our middleware
+require("./config/server")(app);
+
+//All routes are handled through here
+const allRoutes = require("./routes/index.routes");
+app.use("/api", allRoutes);
 
 module.exports = app;
 
